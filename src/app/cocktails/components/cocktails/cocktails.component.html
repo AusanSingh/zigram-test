@@ -1,0 +1,30 @@
+<div class="row no-gutters">
+    <div class="col-3">
+        <div class="cocktail-card">
+            <app-cocktails-sidebar></app-cocktails-sidebar>
+        </div>
+    </div>
+    <div class="col">
+        <div class="cocktail-card all_drinks">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3" *ngFor="let drink of filteredData">
+                        <div class="card">
+                            <a [routerLink]="[drink.idDrink]">
+                                <div class="card-img-top">
+                                    <img [src]="drink.strDrinkThumb" class="img-fluid" alt="{{drink.strDrink}}">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{drink.strDrink}}</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col" *ngIf="!filteredData.length">
+                        <div class="alert alert-warning">Please select filter!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

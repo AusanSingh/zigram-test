@@ -1,0 +1,14 @@
+.btns .btn {
+    width: 240px;
+    font-size: 24px;
+    margin: 0 15px;
+}
+.btns {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.btns small {
+    color: #999;
+}

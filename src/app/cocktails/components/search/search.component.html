@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row g-3 search-box mt-3">
+        <div class="col-sm-4">
+            <input type="search" name="searchStr" [(ngModel)]="searchStr" placeholder="Search.." class="form-control form-control-lg">
+        </div>
+        <div class="col-sm">
+            <button type="button" (click)="search()" class="btn btn-primary btn-lg">Search</button>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row all_drinks">
+        <div class="col-3" *ngFor="let drink of searchedData">
+            <div class="card">
+                <a [routerLink]="['/cocktails', drink.idDrink]">
+                    <div class="card-img-top">
+                        <img [src]="drink.strDrinkThumb" class="img-fluid"  alt="{{drink.strDrink}}">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{drink.strDrink}}</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col" *ngIf="!searchedData">
+            <div class="alert alert-warning">Please search with valid input!</div>
+        </div>
+    </div>
+</div>
+

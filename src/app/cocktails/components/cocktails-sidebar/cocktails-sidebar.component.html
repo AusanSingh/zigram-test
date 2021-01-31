@@ -1,0 +1,14 @@
+<div *ngFor="let cl of categoryList; index as i">
+    <div class="card">
+        <div class="card-header" (click)="expandCollapse(filters[i])">
+            <h6 class="card-title">
+                {{filters[i].name}} 
+                <img src="assets/images/add.svg" width="16px" *ngIf="!filters[i].is_expand">
+                <img src="assets/images/minus.svg" width="16px" *ngIf="filters[i].is_expand">
+            </h6>
+          </div>
+          <ul class="list-group list-group-flush" *ngIf="filters[i].is_expand">
+            <li class="list-group-item" *ngFor="let c of cl.drinks" [ngClass]="{'active': c.active}" (click)="filterCocktails(c,filters[i])">{{c[filters[i].key]}}</li>
+          </ul>
+      </div>
+</div>

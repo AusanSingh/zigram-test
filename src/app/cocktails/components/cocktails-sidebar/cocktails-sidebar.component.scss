@@ -1,0 +1,39 @@
+.card-title {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.card-header {
+    cursor: pointer;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+.card {
+    border-radius: 0;
+}
+
+.list-group {
+    max-height: 200px;
+    overflow: auto;
+}
+.list-group-item.active {
+    position: relative;
+    background-color: #485e75;
+}
+.list-group-item.active:hover {
+    color: #fff;
+    background-color: #5d738a;
+}
+li.list-group-item.active::after {
+    content: '';
+    width: 10px;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+    border-right: 1px solid #fff;
+    position: absolute;
+    right: 20px;
+    transform: rotate(45deg);
+    bottom: 9px;
+    border-radius: 0px 0px 5px 0;
+}
